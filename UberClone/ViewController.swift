@@ -9,17 +9,32 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var riderDriverSwitchBtn: UISwitch!
+    @IBOutlet weak var riderLabel: UILabel!
+    @IBOutlet weak var driverLabel: UILabel!
+    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var loginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override var prefersStatusBarHidden: Bool{
+        return true
     }
-
-
+    
+    
+    @IBAction func signUpBtnTapped(_ sender: UIButton) {
+        print("SignUp Button Tapped")
+    }
+    
+    @IBAction func loginBtnTapped(_ sender: UIButton) {
+        print("Login Button Tapped")
+    }
+    
 }
 
