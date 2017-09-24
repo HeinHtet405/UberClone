@@ -40,20 +40,22 @@ class ViewController: UIViewController {
                     if signUpMode {
                         // SIGN UP
                         
-                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                             if error != nil {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else {
                                 print("Sign Up Success")
+                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
                             }
                         })
                     }else {
                         // LOG IN
-                        Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                             if error != nil {
                                 self.displayAlert(title: "Error", message: error!.localizedDescription)
                             }else {
                                 print("Login Success")
+                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
                             }
                         })
                     }
